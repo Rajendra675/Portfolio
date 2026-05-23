@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+/* Ember Noir — warm palette tokens */
+:root {
+  --color-primary: #e5a84a;
+  --color-secondary: #e8927f;
+  --color-tertiary: #9b9ed4;
+  --color-surface: #0a0908;
+  --color-on-surface: #f5f0ea;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.mono {
+  font-family: 'Geist Mono', monospace;
+}
+
+/* Syntax-highlighted code card in hero */
+.code-keyword {
+  color: #e8927f;
+}
+.code-prop {
+  color: #e5a84a;
+}
+.code-string {
+  color: #b8bcff;
+}
+.code-plain {
+  color: #7a746c;
+}
+
+/* Selection accent */
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 28%, transparent);
+  color: #fff5e6;
+}
+
+/* Smooth focus rings for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
